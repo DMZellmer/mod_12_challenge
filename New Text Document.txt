@@ -1,0 +1,20 @@
+
+Question
+Roza now wants to delete null values from the sorted wfreq array. Which of the following methods would she use?
+
+! Here’s what the code may look like.
+
+d3.json("samples.json").then(function(data){
+    wfreq = data.metadata.map(person =>
+person.wfreq).sort((a,b) => b - a);
+    filteredWfreq = wfreq.filter(element => element !=
+null);
+    console.log(filteredWfreq);
+});
+
+
+
+Correct. Nice work! This method iterates through each element in an array. In this case, there are smaller arrays, each including two elements, inside an outer array. To access these elements, the argument ([first, second]) is used, where first and second are arbitrarily chosen for convenience. They could have been named ([x, y]) or ([key, value]).
+
+researcher1.forEach(([first, second]) => console.log(first
++ ": " + second));
